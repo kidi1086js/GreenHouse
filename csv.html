@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Logging</title>
+<style>
+    /* Add some basic styling */
+   
+    body {
+        font-family: Arial, sans-serif;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th, td {
+        border: 1px solid #fd0000;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #fdb4b4;
+        color: white;
+    }
+    button{
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #FF9F9F;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-bottom: 30px;
+    transition: background-color 0.3s;}
+
+    
+    .button
+    {display: flex;
+   flex-direction:row;
+   margin-left: 180px;
+   gap: 180px;}
+</style>
+</head>
+<body>
+<h1>Data Logging</h1>
+<div class="button">
+<button onclick="startLogging()">Start Logging</button>
+<button onclick="stopLogging()">Stop Logging</button>
+<button onclick="downloadCSV()">Download CSV</button></div>
+<table id="dataTable">
+    <thead>
+        <tr>
+            <th>Time</th>
+            <th>Temperature (°C)</th>
+            <th>Humidity (%)</th>
+            <th>Ambient Light</th>
+            <th>Gas status</th>
+            <th>SoilMoisture1</th>
+            <th>SoilMoisture2</th>
+            <th>SoilMoisture3</th>
+            <th>SoilMoisture4</th>
+            <th>Peltier Bottom</th>
+            <th>Peltier Top</th>
+            <th>Water pump status</th>
+            <th>Water tank Percentage</th>
+            <th>Rain status</th>
+        </tr>
+    </thead>
+    <tbody id="dataBody"></tbody>
+</table>
+
+<script src="js/GetData.js"></script>
+<script>
+    let data = []; // Store data here
+    let intervalId; // Store interval ID to clear it later
+
+    // Function to update data and display it
+    function updateData() {
+        GetData();
+        const time = new Date().toLocaleTimeString();
+        const newRow = `<tr>
+                            <td>${time}</td>
+                            <td>${CurrentTemperature}</td>
+                            <td>${CurrentHumidity}</td>
+                            <td>${CurrentAmbientLight}</td>
+                            <td>${CurrentGasStatus}</td>
+
+                            <td>${SoilMoisture1}</td>
+                            <td>${SoilMoisture2}</td>
+                            <td>${SoilMoisture3}</td>
+                            <td>${SoilMoisture4}</td>
+                            <td>${PeltierBot}</td>
+
+                            <td>${PeltierTop}</td>
+                            <td>${WaterPumpStatus}</td>
+                            <td>${WaterTankStatus}</td>
+                            <td>${RainStatus}</td>
+                        </tr>`;
+        document.getElementById('dataBody').innerHTML += newRow;
+        data.push([time, CurrentTemperature, CurrentHumidity,CurrentAmbientLight,CurrentGasStatus,SoilMoisture1,SoilMoisture2,SoilMoisture3,SoilMoisture4,PeltierBot,PeltierTop,WaterPumpStatus,WaterTankStatus,RainStatus]);
+    }
+    
+    // Start logging function
+    function startLogging() {
+        intervalId = setInterval(updateData, 1000); // Change interval as needed
+    }
+
+    // Stop logging function
+    function stopLogging() {
+        clearInterval(intervalId);
+    }
+
+    // Download CSV function
+    function downloadCSV() {
+        const csvContent = 'data:text/csv;charset=utf-8,' +
+                           data.map(row => row.join(',')).join('\n');
+        const encodedUri = encodeURI(csvContent);
+        const link = document.createElement('a');
+        link.setAttribute('href', encodedUri);
+        link.setAttribute('download', 'data.csv');
+        document.body.appendChild(link); // Required for Firefox
+        link.click();
+    }
+</script>
+</body>
+</html>

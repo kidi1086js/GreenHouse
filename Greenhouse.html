@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greenhouse</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/707b35fa12.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="lib/chart.js"></script>
+</head>
+<body>
+<!---------------------------------------------------header------------------------------------------------->
+<header>
+    <div class="navbar">
+            <i class="fa-solid fa-wheat-awn"></i>
+            <h2>Greenhouse Monitoring and Control system</h2>
+        </div><hr>
+<!-----------------------------------------------------selection of area---------------------------------->
+        <nav class="container">
+            <!---->
+            <div class="dropdown">
+                <button class="dropbtn" onclick="myFunction()">
+                <i class="fa-solid fa-bars"></i>
+                Options
+                </button>
+                <div class="dropdown-content" id="myDropdown">
+                  <a href="Greenhouse.html">Monitoring and Control</a>
+                  <a href="http://192.168.4.1:81/stream"  target="_blank" rel="noopener noreferrer">Stream</a>
+                  <a href="csv.html"  target="_blank" rel="noopener noreferrer">CSV</a>
+                </div>
+                </div> 
+             <!---->
+            <ul>
+                <a href="#home"><li>Home</li></a>
+                <a href="#peltier"><li>Peltier and Main System</li></a>
+                <a href="#ambient"><li>Ambient System</li></a>
+                <a href="#irrigation"><li>Irrigation system</li></a>
+                <a href="#control"><li>Controls section</a>
+                <a href="#autonomous"><li>Autonomous system</a>
+                <a href="#contact"><li>Contact Us</a>
+            </ul>
+        </nav>
+    </header>
+    <!-----------------------------------------------------parallex effect1-------------------------------------------------->
+    <section class="img1" id="home">
+        <div class="text">
+            <span class="textBg">Automated Greenhouse</span>
+        </div>
+    </section>
+    <!----------------------------------------------------------peltier section-------------------------------------------------->
+    <section class="peltier main" id="peltier">
+        <div class="heading-peltier">
+        <h3>
+            Peltier and Main System
+        </h3>
+    </div>
+            <div class="peltier-status">
+                <div class="box">
+                    <div class="box-content" >
+                    <p>Peltier Status:</p>
+                    <div class="box-image1" style="background-image: url('peltier.png');"></div>
+                    <div class="peltier-status-data" id="peltier-status">OFF</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="box-content">
+                    <p>Peltier Top and Bottom Temperature:</p>
+                    <div class="box-image2" style="background-image: url('peltier-module.png');"></div>
+                    <div class="peltier-top-p"><p>Peltier-top Temperature:</p></div>
+                    <div class="peltier-top" id="peltier-top">0</div>
+                    <div class="peltier-bottom-p"><p>Peltier Bottom Temperature:</p></div>
+                    <div class="peltier-bottom" id="peltier-bottom">0</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="box-content">
+                    <p>Enclosure Fan:</p>
+                    <div class="box-image3" style="background-image: url('fan.png');"></div>
+                    <div class="peltier-enclosure-fan-status" id="peltier-enclosure-fan">OFF</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="box-content">
+                    <p>Peltier Pump and Fan status:</p>
+                    <div class="box-image4" style="background-image: url('fanandpump.png');"></div>
+                   <div class="peltier-fan-and-pump-data" id="peltier-pump-and-fan">OFF</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="box-content" >
+                    <p>Dehumifier and Mist Maker Status:</p>
+                    <div class="box-image5" style="background-image: url('mist.png');"></div>
+                    <div class="mist-status-data" id="mist-status">OFF</div>
+                    </div>
+                </div>  
+                <button class="fetch-button1" onclick="Update()">Refresh</button>
+    </section>
+<hr>
+ <!--------------------------------------------parallex effect1--------------------------------------------->
+ <section class="img2">
+    <div class="text">
+        <span class="textBg">Ambient System</span>
+    </div>
+</section>
+    <!---------------------------------------------GRAPH section--------------------------------------------->
+    <section class="ambient-system" id="ambient">
+        <div class="ambient-heading"><h3>Ambient Parameters:</h3></div> 
+        <div id="graph" data-tab-content class="active">
+            <div class="display-content">
+                <div class="part-1">
+                    <div class="row-1">
+                        <div class="display-graph"><canvas id="HUMIDITY"></canvas></div>
+                        <div class="display-graph"><canvas id="TEMPERATURE"></canvas></div>
+                    </div>
+
+                    <div class="row-2">
+                        <div class="display-graph"><canvas id="AMBIENT LIGHT"></canvas></div>
+                        <div class="display-graph"><canvas id="GAS STATUS"></canvas></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<button class="fetch-button2" onclick="Update()">Refresh</button>
+</section>
+    <!---------------------------------------------parallex effect1--------------------------------------------->
+ <section class="img2">
+    <div class="text">
+        <span class="textBg">Irrigation System</span>
+    </div>
+</section>
+
+<!---------------------------------------------Soil moisture dials--------------------------------------------->
+<section class="irrigation main" id="irrigation">
+    <div class="heading-irrigation">
+    <h3>
+        Irrigation system
+    </h3>
+</div>
+        <div class="soil-status">
+            <div class="box2">
+                <div class="box2-content" id="soil-status1">
+                <p>Plant 1:</p>
+                <div class="dial">
+                    <div class="needle" id="needle1"></div>
+                    <div class="SoilMoisture" id ="SoilMoisture1">0%</div>
+                   </div>
+                  </div>
+            </div>
+            <div class="box2">
+                <div class="box2-content" id="soil-status2">
+                <p>Plant 2:</p>
+                <div class="dial">
+                    <div class="needle" id="needle2"></div>
+                    <div class="SoilMoisture" id ="SoilMoisture2">0%</div>
+                   </div>
+                </div>
+            </div>
+            <div class="box2" id="soil-status3">
+                <div class="box2-content">
+                <p>Plant 3:</p>
+                <div class="dial">
+                    <div class="needle" id="needle3"></div>
+                    <div class="SoilMoisture" id ="SoilMoisture3">0%</div>
+                   </div>
+                </div>
+            </div>
+            <div class="box2">
+                <div class="box2-content">
+                <p>Plant 4:</p>
+                <div class="dial">
+                    <div class="needle" id="needle4"></div>
+                    <div class="SoilMoisture" id ="SoilMoisture4">0%</div>
+                   </div>
+                </div>
+            </div>
+        </div>
+
+<!---------------------------------------------Rain status--------------------------------------------->
+        <div class="rain-status">
+            <div class="box3">
+                <div class="box3-content">
+                <p>Rain status:</p>
+                <div class="box3-image1" style="background-image: url('rain.png');"></div>
+                <div class="Rain-Status" id="rain-status">No Rain</div>
+                </div>
+            </div>
+            <div class="box3">
+                <div class="box3-content">
+                <p>Water Tank Percentage:</p>
+                <div class="box3-image2" style="background-image: url('water\ tank.png')"></div>
+                <div class="Water-Tank-percentage" id="water-Tank-percentage">0</div>
+                </div>
+            </div>
+            <div class="box3">
+                <div class="box3-content">
+                <p>Water Pump status:</p>
+                <div class="box3-image3" style="background-image: url('water-pump.png');"></div>
+                <div class="Water-Pump-Status" id="water-pump-status">OFF</div>
+                </div>
+            </div>
+        </div>
+        <button class="fetch-button3" onclick="Update()">Refresh</button>
+</section>
+
+<!---------------------------------------------parallex effect1--------------------------------------------->
+ <section class="img2">
+    <div class="text">
+        <span class="textBg">Control System</span>
+    </div>
+</section>
+
+<!---------------------------------------------control section--------------------------------------------->
+<section class="control-system main" id="control">
+    <div class="heading-controls">
+    <h3>
+        Control System
+    </h3>
+</div>
+
+<div class="control-system1">
+    <div class="box4">
+        <div class="box4-content">
+        <p>Peltier Control</p>
+        <div class="box4-image1" style="background-image: url('peltier_control.png');">
+        </div>
+        <form id="peltier-control-form">
+            <input type="button" value="HOT" onclick="SetPeltierHot()" class="control-button">
+            <input type="button" value="COLD" onclick="SetPeltierCold()" class="control-button">
+            <input type="button" value="OFF" onclick="SetPeltierOff()" class="control-button">
+          </form>
+        </div>
+    </div>
+    <div class="box4">
+        <div class="box4-content" id="Enclosure-fans-control">
+        <p>Enclosure fans control</p>
+        <div class="box4-image2" style="background-image: url('fan_control.png');"></div>
+        <form id="fan-control-form">
+            <input type="submit" value="ON" onclick="submitForm()" class="control-button">
+            <input type="submit" value="OFF" onclick="submitForm()" class="control-button">
+          </form>
+    </div></div>
+
+    <div class="box5">
+        <div class="box5-content">
+        <p>Timer Mode:</p>
+        <div class="box5-image1" style="background-image: url('timer.png');">
+        </div>
+        <form id="watering-time">
+            <input type="number" id="wateringHour" name="wateringHour" min="0" max="23" required>
+            <label for="wateringHour" class="watering-time">Watering Hour:</label>
+            <input type="number" id="wateringMinute" name="wateringMinute" min="0" max="59" required>
+            <label for="wateringMinute" class="watering-time">Watering Minute:</label>
+            <input type="number" id="threshold" name="threshold" min="0" max="100" required>
+            <label for="threshold" class="watering-time">Threshold:</label>
+            <input type="submit" value="Submit" class="control-button" onclick="SendWateringData()">
+          </form>
+        </div>
+    </div>
+    <div class="box5">
+        <div class="box5-content" id="threshold">
+        <p>Water Pump</p>
+        <div class="box5-image2" style="background-image: url('water-pump-control.png');"></div>
+        <form id="water-pump-control-form">
+            <input type="submit" value="ON" onclick="submitForm()" class="control-button">
+            <input type="submit" value="OFF" onclick="submitForm()" class="control-button">
+          </form>
+    </div></div></div>
+</section>
+<!---------------------------------------------parallex effect1--------------------------------------------->
+<section class="img2">
+    <div class="text">
+        <span class="textBg">Autonomous system</span>
+    </div>
+</section>
+<!---------------------------------------------Autonomous system--------------------------------------------->
+<section class="autonomous main" id="autonomous">
+    <div class="heading-autonomous">
+    <h3>
+       Autonomous system Settings
+    </h3>
+</div>
+<div class="autonmous-options">Autonomous system
+    <p>*Optimum temperature and Humidity will be set automatically</p>
+</div>
+<label class="switch">
+    <input type="checkbox" id="toggleSwitch">
+    <span class="slider round"></span>
+  </label>
+  <div id="options" style="display: none;">
+    <!-- Options here -->
+    <div class="autonomous-boxes">
+    <div class="box6">
+        <div class="box6-content" id="Enclosure-fans-control">
+        <p>Set temperature</p>
+        <div class="box6-image1" style="background-image: url('temperature.png');"></div>
+        <form id="Set-temperature">
+            <label for="set-temperature" class="set-temperature-style">Set Temperature:</label>
+            <input type="number" id="set-temperature" name="set-temperature" min="0" max="50" required>
+            <input type="submit" value="Submit" class="control-button" onclick="submitForm()">
+          </form>
+    </div>
+</div>
+
+    <div class="box6">
+        <div class="box6-content" id="Enclosure-fans-control">
+        <p>Set Humidity</p>
+        <div class="box6-image2" style="background-image: url('humidity.png');"></div>
+        <form id="Set-temperature">
+            <label for="set-humidity" class="set-humidity-style">Set Humidity:</label>
+            <input type="number" id="set-humidity" name="set-humidity" min="0" max="100" required>
+            <input type="submit" value="Submit" class="control-button" onclick="submitForm()">
+          </form></div>
+    </div></div>
+</div></div>
+</section>
+<!---------------------------------------------contact us--------------------------------------------->
+<section class="contact-us" id="contact">
+    <div class="heading-contact">
+        <h3>
+            Contact Us
+        </h3></div>
+        <div class="tulsi-jitu">
+        <ul>
+            <h4>Tulsi bhushan</h4>
+            <a>Email: bhushantulsibidya@gmail.com</a>
+            <a href="https://bhushantulsibidya.wordpress.com/" target="_blank" rel="noopener noreferrer">Blogs</a>
+        </ul>
+            <ul>
+                <h4>Jitendra Singh</h4>
+                <a>Email: kidi1086js@gmail.com</a>
+                <a href="https://www.youtube.com/@jitulex" target="_blank" rel="noopener noreferrer">Youtube channel</a>
+            </ul>
+            <ul>
+                <h4>Our mentor: Prof V Venkatramanan</h4>
+                <a>Email: venkatdjsce@gmail.com</a>
+                <a href="https://www.linkedin.com/in/v-venkataramanan/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </ul>
+        </div>
+</section>
+
+
+<!---------------------------------------------Script section--------------------------------------------->
+<script src="js/chart.js"></script>
+<script src="js/Dial.js"></script>
+<script src="js/GetData.js"></script>
+<script src="js/Send.js"></script>
+<script src="js/options.js"></script>
+<script src="js/dropdown.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,1058 @@
+
+*{
+    padding: 0;
+   margin: 0;
+    box-sizing: border-box;
+   
+}
+
+html,body{
+    font-weight: 300;
+    line-height: 1.4;
+    scroll-behavior: smooth;
+}
+
+.navbar{
+    height: 90px;
+    background-color: #116A7B;
+    color: #C2DEDC;
+    font-weight: 500;
+    font-size: larger;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 5px;
+}
+
+header{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+}
+
+/********************************************************Dropdown menu***********************************************************/
+.dropdown {
+    float: left;
+    overflow: hidden;
+    margin-left: -100px;
+  }
+  
+  .dropdown .dropbtn {
+    cursor: pointer;
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: #374259;
+    padding: 12px 15px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  
+.dropdown:hover .dropbtn, .dropbtn:focus {
+    background-color: #4F709C;
+    color: #F0F0F0;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  .show {
+    display: block;
+  }
+  
+  
+/**************************************************selection of section**************************************************/
+
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #374259;}
+.container{
+    max-width: 100%;
+    margin: 0 ;
+    height: 50px;
+    overflow: hidden;
+    font-size: medium;
+}
+nav{
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+        gap:30px;
+        background-color: #C4DFDF;
+        align-items: center;   
+    }
+    
+    nav ul{
+        display: flex;
+        gap: 20px;
+    }
+    
+    .logo{
+        font-size: 32px;
+        font-weight: 700;
+    }
+    
+    nav ul li{
+        border-bottom: 2px solid transparent;
+        transition: 0.2s ease-in;
+    }
+    nav ul li:hover{
+        border-bottom: 2px solid black;
+    }
+
+/*****************************************************Parallex effect**************************************************/
+
+.img1{
+    background-image: url(greenhouse\ image.jpg);
+    height: 500px;
+    position: relative;
+   
+}
+.img2{
+    height: 400px;
+    position: relative;
+    background-image: url(greenhouse\ image.jpg);
+}
+.img1,
+.img2,
+.img3{
+    
+    background-repeat: no-repeat;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.text{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    font-size: 27px;
+    color: black;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+}
+
+.textBg{
+    font-weight: bold;
+    background-color: #5C8984;
+    color:#d6dfcc;
+    padding: 10px;
+}
+
+/*******************************************Boxes of peltier**********************************************/
+.peltier{
+    font-size: large;
+    background-color: #E3F4F4;
+   padding-bottom: 120px;
+}
+
+.heading-peltier{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #354c63;
+    position: relative;
+    top: 10px;
+    border-bottom: 2px solid transparent;
+    transition: 0.2s ease-in;
+}
+
+.heading-peltier h3{border-bottom: 2px solid transparent;
+    transition: 0.2s ease-in;
+}
+
+.heading-peltier h3:hover{
+    border-bottom: 2px solid black;
+}
+
+.peltier-status{
+    position: relative;
+    top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: #E3F4F4;
+}
+.box {
+    height: 250px;
+    width: 18%;
+    background-color: #bfced6;
+    padding: 10px 0px 15px;
+    
+
+}
+.box-image1{
+    height: 150px;
+    background-size: cover;
+    position: relative;
+    right: 10px;
+    top: -10px;
+    
+}
+
+.box-image2{
+    height: 140px;
+    background-size: cover;
+    position: relative;
+    right: 10px;
+    top: -20px;
+}
+.box-image3{
+    height: 140px;
+    background-size: cover;
+    position: relative;
+    right: 20px;
+    top: 30px;
+}
+
+.box-image4{
+    height: 140px;
+    background-size:contain;
+    position: relative;
+    left: 20px;
+    background-repeat: no-repeat;
+    top: 1px;
+}
+
+.box-image5{
+    height: 140px;
+    background-size: cover;
+    position: relative;
+    right: 20px;
+    top: -15px;
+}
+
+.box-content{
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+.box-content p{
+    color:#1a2d37;
+    font-size:large;
+    font-weight:600;
+}
+/**********************************************************data in peltier**********************************************************/
+.peltier-top-p p{
+    font-size:14px;
+}
+
+.peltier-bottom-p p{
+    font-size:14px;
+    position: relative;
+    top: -20px;
+}
+
+.peltier-bottom{
+    position: relative;
+    top: -40px;
+    left: 179px;
+    font-size: 14px;
+}
+
+.peltier-top{
+    position: relative;
+    top: -20px;
+    left: 156px;
+    font-size: 14px;
+}
+
+.peltier-enclosure-fan-status{
+display: flex;
+margin-top: 38px;
+margin-right: 10px;
+justify-content: center;
+}
+
+.peltier-status-data{
+    display: flex;
+    margin-top: 25px;
+    margin-right: 20px;
+    justify-content: center;
+}
+
+.mist-status-data{
+    display: flex;
+    margin-top: 9px;
+    margin-right: 10px;
+    justify-content: center;
+}
+
+.peltier-fan-and-pump-data{
+    display: flex;
+    margin-top: 12px;
+    margin-right: 20px;
+    justify-content: center;
+}
+.fetch-button1 {
+    margin-top: 275px;
+    margin-left: 0.4%;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #FF9F9F;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+  }
+/******************************************************GRAPH**********************************************************/
+.ambient-system{
+    position: relative;
+    background-color: #DCF2F1;
+    padding-bottom: 100px;
+}
+.active[data-tab-content] {
+    display: block;
+}
+
+.display-content {
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    position: relative;
+    right: 10px;
+}
+
+.part-1 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 90%;
+    padding: 0px;
+    margin-left: 35px;
+}
+
+.row-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 400px;
+}
+
+.row-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 400px;
+}
+
+.row-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 400px;
+}
+
+
+.display-graph {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85%;
+    width: 100%;
+    border: 3px solid #102C57;
+    margin: 20px;
+    border-radius: 15px; 
+}
+section{scroll-margin: 140px;}
+
+.ambient-heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #354c63;
+    position: relative;
+   
+    top: 20px;
+    font-size: larger;
+    border-bottom: 2px solid transparent;
+        transition: 0.2s ease-in;
+}
+
+.ambient-heading h3{border-bottom: 2px solid transparent;
+    transition: 0.2s ease-in;
+}
+
+.ambient-heading h3:hover{
+    border-bottom: 2px solid #2D4356;
+}
+
+
+.fetch-button2 {
+    margin-top: 16px;
+    margin-left: 46.6%;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #FF9F9F;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+  }
+
+/***********************************************Boxes of irrigatin system**************************************/
+.irrigation{
+    font-size: large;
+    background-color: #E3F4F4;
+   padding-bottom: 100px;
+}
+
+.heading-irrigation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #354c63;
+    position: relative;
+    top: 10px;
+    border-bottom: 2px solid transparent;
+    transition: 0.2s ease-in;
+}
+
+.heading-irrigation h3{border-bottom: 2px solid transparent;
+    transition: 0.2s ease-in;
+}
+
+.heading-irrigation h3:hover{
+    border-bottom: 2px solid black;
+}
+
+.soil-status{
+    position: relative;
+    top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: #E3F4F4;
+}
+
+.box2 {
+    height: 250px;
+    width: 23%;
+    background-color: #ECE5C7;
+
+}
+.box2-content{
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+.box2-content p{
+    color:#374259;
+    font-size:large;
+    font-weight:600;
+}
+
+/**************************************************Soil moisture dial*********************************************************/
+.anim{animation:fade .8s linear;}
+
+@keyframes fade{
+  0%{opacity:0;}
+  100%{opacity:1;}
+}
+.dial{
+    background:#C2DEDC;
+    border-radius: 150px 150px 0 0;
+    box-shadow:0 0 0 4px #116A7B,0 4px 4px 4px rgba(0, 0, 0, 0.3);
+    height:100px;
+    position:relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   margin-left: 10%;
+    margin-top: 39px;
+    width: 200px;
+  }
+
+.needle{
+    background:#f5f5f5;
+    height:100px;
+    left:49%;
+    position: absolute;
+    top:-2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform:rotate(-90deg);
+    width:3px;
+}
+.needle{
+    border-radius:2px;
+    transform-origin:bottom center;
+    transition:all .5s linear;
+    -webkit-border-radius:2px;
+    -moz-border-radius:2px;
+    -ms-border-radius:2px;
+    -o-border-radius:2px;
+}
+.SoilMoisture{
+    display: inline-block;
+    font-size:20px;
+    margin-top:90%;
+    margin-left: 0%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+
+/**********************************************************Rain status************************************************/
+.rain-status{
+    position: relative;
+    top: 90px;
+    padding-bottom: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: #E3F4F4;
+}
+
+.box3 {
+    height: 250px;
+    width: 30%;
+    background-color: #ECE5C7;
+    padding: 10px 0px 15px;
+}
+.box3-content{
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+.box3-content p{
+    color:#374259;
+    font-size:large;
+    font-weight:600;
+}
+
+
+.box3-image1{
+    height: 160px;
+    background-size: 200px;
+   background-repeat: no-repeat;
+   position: relative;
+    left: 65px;
+}
+
+.box3-image2{
+    height: 160px;
+    background-size: 160px;
+   background-repeat: no-repeat;
+    position: relative;
+    left: 90px;
+    top: 5px;
+}
+
+.box3-image3{
+    height: 160px;
+    background-size: 160px;
+   background-repeat: no-repeat;
+    position: relative;
+    left: 90px;
+    top: 25px;
+}
+
+
+.Rain-Status{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-right: 35px;
+}
+
+.Water-Tank-percentage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12px;
+    margin-right: 18px;
+}
+
+
+.Water-Pump-Status{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12px;
+    margin-right: 18px;
+}
+
+
+.fetch-button3 {
+    margin-top: 35px;
+    margin-left: 45%;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #FF9F9F;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+  }
+
+/*******************************************************Control system***********************************************/
+.control-system{
+    font-size: large;
+    background-color: #cadef0;
+   
+}
+
+.heading-controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:  #273442;;
+    position: relative;
+    top: 10px;
+    border-bottom: 2px solid transparent;
+        transition: 0.2s ease-in;
+}
+
+.heading-controls h3{border-bottom: 2px solid transparent;
+    transition: 0.2s ease-in;
+}
+
+.heading-controls h3:hover{
+    border-bottom: 2px solid black;
+}
+
+/*Control 1 with two boxes*/
+.control-system1{
+    position: relative;
+   margin-top: 30px;
+    padding-bottom: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color:#cadef0;
+}
+.box4 {
+    height: 270px;
+    /**border:2px solid black;**/
+    width: 45%;
+    background-color: #273442;
+    padding: 10px 0px 15px;
+}
+.box4-content{
+   margin-left: 10px;
+    font-weight: 600;
+}
+
+.box4-content p{
+    color: #cad8e2;
+    font-size:larger;
+    font-weight:600;
+}
+
+.box4-image1{
+    height: 160px;
+    background-size: 150px;
+   background-repeat: no-repeat;
+    position: relative;
+    left: 190px;
+    top: 10px;
+}
+
+.box4-image2{
+    height: 160px;
+    background-size: 160px;
+   background-repeat: no-repeat;
+    position: relative;
+    left: 180px;
+    top: 2px;
+}
+
+.box4-content form{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/*****************************************************control2********************************************/
+
+.control-button{
+    background-color:#ADC4CE;
+    padding: 10px;
+    color:black;
+    font-size: medium;
+}
+.box5 {
+    height: 270px;
+    /**border:2px solid black;**/
+    width: 45%;
+    margin-top: 30px;
+    background-color: #273442;
+    padding: 10px 0px 15px;
+}
+.box5-content{
+   margin-left: 10px;
+    font-weight: 600;
+}
+
+.box5-content p{
+    color: #cad8e2;
+    font-size:larger;
+    font-weight:600;
+}
+
+.box5-image1{
+    height: 160px;
+    background-size: 150px;
+   background-repeat: no-repeat;
+    position: relative;
+    left: 190px;
+    top: 10px;
+}
+
+.box5-image2{
+    height: 160px;
+    background-size: 160px;
+   background-repeat: no-repeat;
+    position: relative;
+    left: 185px;
+    top: 15px;
+}
+
+.box5-content form{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.watering-time{
+    color: white;
+    font-size: small;
+    display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.watering-time label {
+    margin: 5px 10px 5px 0;
+  }
+.watering-time input {
+    vertical-align: middle;
+    margin: 5px 10px 5px 0;
+    padding: 5px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+  }
+
+
+/********************************************************Autonomous************************************************/
+
+.autonomous{
+    font-size: large;
+    background-color: #cadef0;
+   padding-bottom: 50px;
+  
+}
+
+.heading-autonomous{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:  #273442;;
+    position: relative;
+    top: 10px;
+    border-bottom: 2px solid transparent;
+    transition: 0.2s ease-in;
+    padding-bottom: 20px;
+}
+
+.heading-autonomous h3{border-bottom: 2px solid transparent;
+    transition: 0.2s ease-in;
+}
+
+.heading-autonomous h3:hover{
+    border-bottom: 2px solid black;
+}
+
+.autonmous-options{
+    padding: 10px 10px 10px 10px;
+    color: #102C57;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.autonmous-options p{
+    font-style: italic;
+    color: red;
+    font-size: 13px;
+    
+}
+
+.switch {
+    position: relative;
+    left: 47%;
+    top: 5px;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  
+  #options {
+    margin-top: 10px;
+    padding-bottom: 20px;
+  }
+/**********************************************************boxes for autonomous********************************************************/
+  
+.autonomous-boxes{
+   
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color:  #cadef0;
+    
+}
+.box6 {
+    height: 270px;
+    /**border:2px solid black;**/
+    width: 40%;
+    margin-top: 30px;
+    background-color: #273442;
+    padding: 10px 0px 15px;
+}
+.box6-content{
+   margin-left: 10px;
+    font-weight: 600;
+}
+
+.box6-content p{
+    color: #cad8e2;
+    font-size:larger;
+    font-weight:600;
+}
+
+.box6-image1{
+    height: 160px;
+    background-size: 150px;
+   background-repeat: no-repeat;
+    position: relative;
+    left: 150px;
+    top: 10px;
+}
+
+.box6-image2{
+    height: 160px;
+    background-size: 160px;
+   background-repeat: no-repeat;
+    position: relative;
+    left: 165px;
+    top: 5px;
+}
+
+.box6-content form{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    padding: 10px 10px 10px 56px;
+}
+
+.set-temperature-style{
+    color: white;
+    font-size:medium;
+    display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.set-temperature-style label {
+   font-size: large;
+  }
+.set-temperature-style input {
+    vertical-align: middle;
+    margin: 5px 10px 5px 0;
+    padding: 5px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+  }
+
+  
+.set-humidity-style{
+    color: white;
+    font-size:medium;
+    display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.set-humidity-style label {
+   font-size: large;
+  }
+.set-humidity-style input {
+    vertical-align: middle;
+    margin: 5px 10px 5px 0;
+    padding: 5px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+  }
+
+/************************************************************Contact Us***************************************************/
+  .contact-us{
+    font-size: large;
+    background-color: #000000;
+   padding-bottom: 50px;
+  
+}
+
+.heading-contact
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    position: relative;
+    top: 10px;
+    border-bottom: 2px solid transparent;
+        transition: 0.2s ease-in;
+}
+
+.heading-contact h3{border-bottom: 2px solid transparent;
+    transition: 0.2s ease-in;
+}
+
+.heading-contact h3:hover{
+    border-bottom: 2px solid rgb(255, 255, 255);
+}
+
+
+.tulsi-jitu ul{
+    margin-top: 20px;
+}
+.tulsi-jitu ul a{
+    display: block;
+    font-size: 0.85rem;
+    margin-top: 10px;
+    color: #dddddd;
+}
+
+.tulsi-jitu{
+    display: flex;
+    justify-content: space-evenly;
+    color: wheat;
+}
+
+.tulsi-jitu h4{border-bottom: 2px solid transparent;
+    transition: 0.2s ease-in;}
+
+.tulsi-jitu h4:hover{border-bottom: 2px solid white;
+        transition: 0.2s ease-in;}
+
+
+
+.jitu{
+    display: flex;
+    justify-content: space-evenly;
+    color: wheat;
+}

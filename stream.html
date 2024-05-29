@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP32-CAM Video Stream</title>
+    <style>
+        #video-container {
+            width: 640px;
+            height: 480px;
+            overflow: hidden;
+        }
+        video {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="video-container">
+        <video id="video" autoplay></video>
+    </div>
+
+    <script>
+        const video = document.getElementById('video');
+
+        // Fetch video frames from the server and update the video element
+        function fetchVideo() {
+            fetch('http://192.168.4.1:81/stream')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.blob();
+            })
+            .then(blob => {
+                const objectURL = URL.createObjectURL(blob);
+                video.src = objectURL;
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+        }
+
+        // Fetch video frames every 1000ms (1 second)
+        setInterval(fetchVideo, 1000);
+    </script>
+</body>
+</html>
